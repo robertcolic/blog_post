@@ -13,7 +13,7 @@ from forms import CreatePostForm, RegisterForm, LoginForm, CommentForm
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
+app.config['SECRET_KEY'] = "secretKey"
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
