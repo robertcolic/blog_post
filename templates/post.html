@@ -39,12 +39,6 @@
         {% endif %}
 
         <!-- Comments Area -->
-        <!-- Load the CKEditor -->
-        {{ ckeditor.load() }}
-        <!-- Configure it with the name of the form field from CommentForm -->
-        {{ ckeditor.config(name='comment_text') }}
-        <!-- Create the wtf quick form from CommentForm -->
-        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
         <div class="comment">
           <ul class="commentList">
             <!-- Show all comments -->
@@ -64,6 +58,8 @@
           </ul>
 
         </div>
+        {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+
       </div>
     </div>
   </div>
