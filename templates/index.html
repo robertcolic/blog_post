@@ -11,7 +11,7 @@
         <div class="site-heading">
           {% if current_user.is_authenticated %}
           <h1>Welcome, {{ current_user.name }}</h1>
-          {% elseif %}
+          {% elif %}
           <h1>Robert's Blog</h1>
           {% endif %}
           <span class="subheading">A collection of random musings.</span>
