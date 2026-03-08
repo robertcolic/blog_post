@@ -14,6 +14,7 @@ import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
+app.config['WTF_CSRF_ENABLED'] = False
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
