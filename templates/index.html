@@ -9,7 +9,11 @@
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
         <div class="site-heading">
-          <h1>Angela's Blog</h1>
+          {% if current_user.is_authenticated %}
+          <h1>Welcome, {{ current_user.name }}</h1>
+          {% elseif %}
+          <h1>Robert's Blog</h1>
+          {% endif %}
           <span class="subheading">A collection of random musings.</span>
         </div>
       </div>
@@ -30,7 +34,7 @@
         <p class="post-meta">
           Posted by
           <!-- post.author.name is now a User object -->
-          <a href="#">{{post.author.name}}</a>
+          <a href="https://www.instagram.com/colic.r99/">{{post.author.name}}</a>
           on {{post.date}}
           <!-- Only show delete button if user id is 1 (admin user) -->
           {% if current_user.id == 1: %}
